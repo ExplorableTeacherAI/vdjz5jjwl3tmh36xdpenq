@@ -102,6 +102,14 @@ export const blocks: ReactElement[] = [
         </Block>
     </StackLayout>,
 
+    <StackLayout key="layout-block-1772517675421" maxWidth="xl">
+        <Block id="block-1772517675421" padding="sm">
+            <EditableParagraph id="para-interactive-math" blockId="block-1772517675421">
+                Interactive mathematics transforms passive learning into active exploration. Rather than simply reading about concepts, students can manipulate numbers, drag points on graphs, and watch equations come alive. This hands-on approach helps learners build intuition — when you can change a value and instantly see how it affects the outcome, abstract ideas suddenly become concrete and memorable.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
     <StackLayout key="layout-para-1" maxWidth="xl">
         <Block id="block-para-1" padding="sm">
             <EditableParagraph id="para-1" blockId="block-para-1">
