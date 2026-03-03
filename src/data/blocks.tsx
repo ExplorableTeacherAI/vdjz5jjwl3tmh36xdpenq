@@ -1,6 +1,7 @@
 import { type ReactElement } from "react";
-// import { Block } from "@/components/templates";
-// import { StackLayout, SplitLayout, GridLayout, ScrollytellingLayout, ScrollStep, ScrollVisual } from "@/components/layouts";
+import { Block } from "@/components/templates";
+import { StackLayout } from "@/components/layouts";
+import { EditableH1, EditableParagraph } from "@/components/atoms";
 
 // Initialize variables and their colors from this file's variable definitions
 import { useVariableStore, initializeVariableColors } from "@/stores";
@@ -85,5 +86,19 @@ initializeVariableColors(variableDefinitions);
  */
 
 export const blocks: ReactElement[] = [
-    // Start adding your blocks here!
+    <StackLayout key="layout-title" maxWidth="xl">
+        <Block id="block-title" padding="md">
+            <EditableH1 id="h1-title" blockId="block-title">
+                Mathematics Education
+            </EditableH1>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-para-1" maxWidth="xl">
+        <Block id="block-para-1" padding="sm">
+            <EditableParagraph id="para-1" blockId="block-para-1">
+                Mathematics is more than just numbers and equations — it is a way of thinking. When students learn maths, they develop problem-solving skills, logical reasoning, and the ability to see patterns in the world around them. Good maths education does not just teach formulas to memorise; it helps students understand why those formulas work and how to apply them in new situations.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
 ];
