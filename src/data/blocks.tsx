@@ -133,6 +133,14 @@ export const blocks: ReactElement[] = [
         </Block>
     </StackLayout>,
 
+    <StackLayout key="layout-block-1772519201702" maxWidth="xl">
+        <Block id="block-1772519201702" padding="sm">
+            <EditableParagraph id="para-1772519201702" blockId="block-1772519201702">
+                The number line is divided into two distinct regions by zero. To the right of zero lie the positive numbers — these represent quantities, gains, or values above a baseline. To the left of zero lie the negative numbers — representing debts, losses, or values below a reference point. Zero itself is neither positive nor negative; it marks the boundary between these two worlds. Understanding this division helps us make sense of concepts like temperature below freezing, elevations below sea level, and bank account overdrafts.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
     <StackLayout key="layout-para-1" maxWidth="xl">
         <Block id="block-para-1" padding="sm">
             <EditableParagraph id="para-1" blockId="block-para-1">
