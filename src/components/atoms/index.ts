@@ -129,6 +129,8 @@ export { VennDiagram } from "./visual/VennDiagram";
 export type { VennDiagramProps } from "./visual/VennDiagram";
 export { NumberLine } from "./visual/NumberLine";
 export type { NumberLineProps } from "./visual/NumberLine";
+export { ColorCodedNumberLine } from "./visual/ColorCodedNumberLine";
+export type { ColorCodedNumberLineProps } from "./visual/ColorCodedNumberLine";
 export { MathTreeVisualization } from "./visual/MathTreeVisualization";
 export type {
     MathTreeNode,

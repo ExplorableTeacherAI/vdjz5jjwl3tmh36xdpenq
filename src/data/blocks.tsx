@@ -1,7 +1,7 @@
 import { type ReactElement } from "react";
 import { Block } from "@/components/templates";
 import { StackLayout } from "@/components/layouts";
-import { EditableH1, EditableParagraph, NumberLine } from "@/components/atoms";
+import { EditableH1, EditableParagraph, NumberLine, ColorCodedNumberLine } from "@/components/atoms";
 import { useVar, useSetVar } from "@/stores";
 
 // Initialize variables and their colors from this file's variable definitions
@@ -138,6 +138,16 @@ export const blocks: ReactElement[] = [
             <EditableParagraph id="para-1772519201702" blockId="block-1772519201702">
                 The number line is divided into two distinct regions by zero. To the right of zero lie the positive numbers — these represent quantities, gains, or values above a baseline. To the left of zero lie the negative numbers — representing debts, losses, or values below a reference point. Zero itself is neither positive nor negative; it marks the boundary between these two worlds. Understanding this division helps us make sense of concepts like temperature below freezing, elevations below sea level, and bank account overdrafts.
             </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-block-1772519402569" maxWidth="xl">
+        <Block id="block-1772519402569" padding="sm">
+            <ColorCodedNumberLine
+                min={-10}
+                max={10}
+                step={1}
+            />
         </Block>
     </StackLayout>,
 
