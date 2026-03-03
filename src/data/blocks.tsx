@@ -148,7 +148,7 @@ export const blocks: ReactElement[] = [
         </Block>
     </StackLayout>,
 
-    {/* ========== PRIME NUMBERS SECTION ========== */}
+    // ========== PRIME NUMBERS SECTION ==========
     <StackLayout key="layout-block-1772520725858-title" maxWidth="xl">
         <Block id="block-1772520725858" padding="md">
             <EditableH2 id="h2-prime-numbers" blockId="block-1772520725858">
@@ -205,7 +205,7 @@ export const blocks: ReactElement[] = [
             </EditableParagraph>
         </Block>
     </StackLayout>,
-    {/* ========== END PRIME NUMBERS SECTION ========== */}
+    // ========== END PRIME NUMBERS SECTION ==========
 
     <StackLayout key="layout-block-1772519402569" maxWidth="xl">
         <Block id="block-1772519402569" padding="sm">
