@@ -93,6 +93,18 @@ export const variableDefinitions: Record<string, VariableDefinition> = {
         color: '#EC4899',
     },
 
+    // Prime Numbers Section
+    primeTestNumber: {
+        defaultValue: 12,
+        type: 'number',
+        label: 'Number to Test',
+        description: 'The number being tested for primality',
+        min: 2,
+        max: 36,
+        step: 1,
+        color: '#8B5CF6',
+    },
+
     // Uncomment and modify these examples for your lesson:
 
     /*

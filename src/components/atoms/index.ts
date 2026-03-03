@@ -181,3 +181,7 @@ export type { ImageDisplayProps, ImageFit } from "./visual/ImageDisplay";
 // Visual — Video Display
 export { VideoDisplay } from "./visual/VideoDisplay";
 export type { VideoDisplayProps, VideoFit } from "./visual/VideoDisplay";
+
+// Visual — Factor Grid (Prime Numbers)
+export { FactorGrid } from "./visual/FactorGrid";
+export type { FactorGridProps } from "./visual/FactorGrid";

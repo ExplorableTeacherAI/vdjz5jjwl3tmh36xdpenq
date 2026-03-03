@@ -1,8 +1,9 @@
 import { type ReactElement } from "react";
 import { Block } from "@/components/templates";
-import { StackLayout } from "@/components/layouts";
-import { EditableH1, EditableParagraph, NumberLine, ColorCodedNumberLine } from "@/components/atoms";
+import { StackLayout, SplitLayout } from "@/components/layouts";
+import { EditableH1, EditableH2, EditableParagraph, NumberLine, ColorCodedNumberLine, InlineScrubbleNumber, InlineTooltip, FactorGrid } from "@/components/atoms";
 import { useVar, useSetVar } from "@/stores";
+import { getVariableInfo, numberPropsFromDefinition } from "./variables";
 
 // Initialize variables and their colors from this file's variable definitions
 import { useVariableStore, initializeVariableColors } from "@/stores";
@@ -24,6 +25,12 @@ const InteractiveNumberLine = () => {
             onValueChange={(newValue) => setVar('numberLineValue', newValue)}
         />
     );
+};
+
+// Interactive Factor Grid that syncs with the global variable store
+const InteractiveFactorGrid = () => {
+    const number = useVar('primeTestNumber', 12);
+    return <FactorGrid number={number as number} accentColor="#8B5CF6" />;
 };
 
 /**
@@ -140,6 +147,65 @@ export const blocks: ReactElement[] = [
             </EditableParagraph>
         </Block>
     </StackLayout>,
+
+    {/* ========== PRIME NUMBERS SECTION ========== */}
+    <StackLayout key="layout-block-1772520725858-title" maxWidth="xl">
+        <Block id="block-1772520725858" padding="md">
+            <EditableH2 id="h2-prime-numbers" blockId="block-1772520725858">
+                Prime Numbers: The Building Blocks of Mathematics
+            </EditableH2>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-prime-intro" maxWidth="xl">
+        <Block id="block-prime-intro" padding="sm">
+            <EditableParagraph id="para-prime-intro" blockId="block-prime-intro">
+                Most numbers can be broken apart into smaller pieces. Take 12 — you can split it into 3 groups of 4, or 2 groups of 6, or even 4 groups of 3. But some numbers stubbornly refuse to be divided evenly. The number 7, for instance, cannot be split into equal groups no matter how you try. These special, indivisible numbers are called{" "}
+                <InlineTooltip
+                    id="tooltip-prime"
+                    tooltip="A natural number greater than 1 that cannot be formed by multiplying two smaller natural numbers."
+                    color="#8B5CF6"
+                >
+                    prime numbers
+                </InlineTooltip>
+                {" "}— and they are the fundamental building blocks from which all other numbers are made.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <SplitLayout key="layout-prime-explorer" ratio="1:1" gap="lg">
+        <Block id="block-prime-text" padding="sm">
+            <EditableParagraph id="para-prime-explorer" blockId="block-prime-text">
+                Every whole number can be arranged as dots in a rectangle. If a number can only form a single row (1 × itself), it is prime. If it can form multiple rectangles, it is{" "}
+                <InlineTooltip
+                    id="tooltip-composite"
+                    tooltip="A number that can be divided evenly by numbers other than 1 and itself."
+                    color="#F59E0B"
+                >
+                    composite
+                </InlineTooltip>
+                . Try changing the number below to see which numbers are prime and which are composite. The number{" "}
+                <InlineScrubbleNumber
+                    id="scrubble-prime-test"
+                    varName="primeTestNumber"
+                    {...numberPropsFromDefinition(getVariableInfo('primeTestNumber'))}
+                />
+                {" "}reveals its nature through the rectangles it can form.
+            </EditableParagraph>
+        </Block>
+        <Block id="block-prime-viz" padding="sm">
+            <InteractiveFactorGrid />
+        </Block>
+    </SplitLayout>,
+
+    <StackLayout key="layout-prime-fact" maxWidth="xl">
+        <Block id="block-prime-fact" padding="sm">
+            <EditableParagraph id="para-prime-fact" blockId="block-prime-fact">
+                Here is something remarkable: every whole number greater than 1 can be written as a product of prime numbers in exactly one way. The number 12 is 2 × 2 × 3. The number 100 is 2 × 2 × 5 × 5. This is called the Fundamental Theorem of Arithmetic — primes are truly the atoms of the number world, and every number has a unique prime "recipe."
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+    {/* ========== END PRIME NUMBERS SECTION ========== */}
 
     <StackLayout key="layout-block-1772519402569" maxWidth="xl">
         <Block id="block-1772519402569" padding="sm">
