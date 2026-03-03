@@ -94,6 +94,14 @@ export const blocks: ReactElement[] = [
         </Block>
     </StackLayout>,
 
+    <StackLayout key="layout-history" maxWidth="xl">
+        <Block id="block-1772517540916" padding="sm">
+            <EditableParagraph id="para-history" blockId="block-1772517540916">
+                The history of mathematics stretches back thousands of years. Ancient civilisations like the Babylonians, Egyptians, and Greeks made remarkable discoveries — from basic arithmetic and geometry to the foundations of algebra and calculus. Each generation built upon the work of those before, creating the rich tapestry of mathematical knowledge we have today.
+            </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
     <StackLayout key="layout-para-1" maxWidth="xl">
         <Block id="block-para-1" padding="sm">
             <EditableParagraph id="para-1" blockId="block-para-1">
