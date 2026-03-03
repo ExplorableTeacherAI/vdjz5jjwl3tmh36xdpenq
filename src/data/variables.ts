@@ -81,6 +81,18 @@ export const variableDefinitions: Record<string, VariableDefinition> = {
     // ADD YOUR VARIABLES HERE
     // ========================================
 
+    // Number line value
+    numberLineValue: {
+        defaultValue: 3,
+        type: 'number',
+        label: 'Number Line Value',
+        description: 'A number shown on the number line',
+        min: -10,
+        max: 10,
+        step: 1,
+        color: '#EC4899',
+    },
+
     // Uncomment and modify these examples for your lesson:
 
     /*

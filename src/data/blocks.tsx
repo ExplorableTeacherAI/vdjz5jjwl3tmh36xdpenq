@@ -1,13 +1,30 @@
 import { type ReactElement } from "react";
 import { Block } from "@/components/templates";
 import { StackLayout } from "@/components/layouts";
-import { EditableH1, EditableParagraph } from "@/components/atoms";
+import { EditableH1, EditableParagraph, NumberLine } from "@/components/atoms";
+import { useVar, useSetVar } from "@/stores";
 
 // Initialize variables and their colors from this file's variable definitions
 import { useVariableStore, initializeVariableColors } from "@/stores";
 import { getDefaultValues, variableDefinitions } from "./variables";
 useVariableStore.getState().initialize(getDefaultValues());
 initializeVariableColors(variableDefinitions);
+
+// Interactive NumberLine wrapper that syncs with the global variable store
+const InteractiveNumberLine = () => {
+    const value = useVar('numberLineValue', 3);
+    const setVar = useSetVar();
+
+    return (
+        <NumberLine
+            min={-10}
+            max={10}
+            step={1}
+            value={value as number}
+            onValueChange={(newValue) => setVar('numberLineValue', newValue)}
+        />
+    );
+};
 
 /**
  * ------------------------------------------------------------------
@@ -107,6 +124,12 @@ export const blocks: ReactElement[] = [
             <EditableParagraph id="para-interactive-math" blockId="block-1772517675421">
                 Interactive mathematics transforms passive learning into active exploration. Rather than simply reading about concepts, students can manipulate numbers, drag points on graphs, and watch equations come alive. This hands-on approach helps learners build intuition — when you can change a value and instantly see how it affects the outcome, abstract ideas suddenly become concrete and memorable.
             </EditableParagraph>
+        </Block>
+    </StackLayout>,
+
+    <StackLayout key="layout-block-1772518087391" maxWidth="xl">
+        <Block id="block-1772518087391" padding="sm">
+            <InteractiveNumberLine />
         </Block>
     </StackLayout>,
 
